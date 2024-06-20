@@ -18,19 +18,27 @@ let candidateAnswers;
 
 function askForName() {
   // TODO 1.1b: Ask for candidate's name //
-
+  candidateName = input.question("Please enter your name: ");
 }
 
 function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
-
-
+  question = `1 ) What year did World War 2 start? `;
+  candidateAnswer = input.question(question);
+  //candidateAnswers.push(candidateAnswer);
 }
 
 function gradeQuiz(candidateAnswers) {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
-
+  correctAnswer = `1945`;
+  console.log("Your Answer: " + candidateAnswer);
+  console.log("Correct Answer: " + correctAnswer);
+  if(candidateAnswer.toLowerCase() === correctAnswer.toLowerCase()) {
+    console.log("\nYou're correct!");
+  } else {
+    console.log("Sorry wrong answer.");
+  }
 
 
   let grade;  //TODO 3.2 use this variable to calculate the candidates score.
@@ -42,7 +50,7 @@ function gradeQuiz(candidateAnswers) {
 function runProgram() {
   askForName();
   // TODO 1.1c: Greet candidate using their name //
-   console.log();
+   console.log("Hi, " + candidateName + "\n");
   askQuestion();
   gradeQuiz(this.candidateAnswers);
 }
